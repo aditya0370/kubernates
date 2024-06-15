@@ -14,12 +14,8 @@ pipeline {
                       sudo touch/etc/profile.d/maven.sh 
                       export M2_HOME=/opt/maven
                       export PATH=$M2_HOME/bin:$PATH
-                      source /etc/profile.d/maven.sh''' 
-            }
-        }
-        stage('Build') {
-            steps { 
-                 sh '/opt/maven/bin/mvn clean package '
+                      source /etc/profile.d/maven.sh
+                      /opt/maven/bin/mvn clean package''' 
             }
         }
         stage('Test') {
